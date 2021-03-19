@@ -15,12 +15,12 @@ tf.flags.DEFINE_boolean('fine_tune_embedding', False, 'whether to fine tune the 
 tf.flags.DEFINE_integer('sentence_max_length', 41, 'msrp or sick max sentence length')   # 最长的句子长度由样本确定
 tf.flags.DEFINE_integer('nums_classes', 2, 'num of the labels')    # MSRP是二分类，SICK是五分类
 tf.flags.DEFINE_float('learning_rate', 0.001, 'learning rate')      # 学习率
-tf.flags.DEFINE_integer('rnn_layers', 3, 'the number of rnn layers')
+tf.flags.DEFINE_integer('rnn_layers', 2, 'the number of rnn layers')
 tf.flags.DEFINE_integer('attention_hidden', 50, 'number of hidden units in attention layer')
-tf.flags.DEFINE_integer('attention_num', 1, 'the number of different sentence semantics, r')
-tf.flags.DEFINE_float('penalty_C', 0.001, 'Coefficient of penalty term')
+tf.flags.DEFINE_integer('attention_num', 10, 'the number of different sentence semantics, r')
+tf.flags.DEFINE_float('penalty_C', 0.5, 'Coefficient of penalty term')
 tf.flags.DEFINE_integer('MLP_hidden_size', 50, 'the number of hidden units in MLP layer and output layer')
-tf.flags.DEFINE_float('l2', 0.001, 'regularization parameter')
+tf.flags.DEFINE_float('l2', 0.005, 'regularization parameter')
 tf.flags.DEFINE_float("dropout_rate", 0.5, "Dropout keep probability (default: 0.5)")
 
 tf.flags.DEFINE_integer('num_epochs', 100, 'Number of epochs to be trained')
